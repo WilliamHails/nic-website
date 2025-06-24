@@ -15,7 +15,7 @@ const links = [
 
 export default function Navbar () {
   return (
-    <nav className="bg-gray-800 text-white flex items-center px-6 h-16">
+    <nav className="bg-blue-950 text-white flex items-center px-6 h-16">
 
         {/*Logo */}
         <Link to="/" className="font-bold text-xl mr-8">MyCompany</Link>
