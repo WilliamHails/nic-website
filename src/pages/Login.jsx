@@ -1,3 +1,4 @@
+// src/pages/Login.jsx
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 
@@ -9,7 +10,6 @@ export default function Login() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    // redirect based on role
     if (role === 'Department') {
       navigate('/dashboard/department')
     } else {
@@ -18,42 +18,95 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded shadow-md w-80"
-      >
-        <h2 className="text-xl mb-4">Login</h2>
-        <label className="block mb-2">Username</label>
-        <input
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          className="w-full border px-2 py-1 mb-4"
-        />
-        <label className="block mb-2">Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          className="w-full border px-2 py-1 mb-4"
-        />
-        <label className="block mb-2">Role</label>
-        <select
-          value={role}
-          onChange={e => setRole(e.target.value)}
-          className="w-full border px-2 py-1 mb-4"
-        >
-          <option>Candidate</option>
-          <option>Department</option>
-          <option>Admin</option>
-        </select>
-        <button type="submit" className="w-full bg-blue-600 text-white py-2">
-          Submit
-        </button>
-        <p className="mt-4 text-sm">
-          New? <Link to="/register" className="text-blue-600">Register here</Link>
+    <div className="min-h-screen flex">
+      <div className="w-2/3 bg-gradient-to-t from-blue-950 via-sky-800 to-blue-950 flex flex-col items-center justify-center text-center p-8">
+        <h1 className="drop-shadow-2xl font-bold font-serif text-white text-8xl mb-4">
+          Welcome
+        </h1>
+        <p className="drop-shadow-2xl font-sans font-medium text-white text-2xl">
+          Existing users may login using their username and password. For new users, click on sign up to register.
         </p>
-      </form>
+      </div>
+
+      <div className="w-1/2 bg-white flex items-center justify-center">
+        <div className="w-2/3 max-w-md space-y-6">
+          <h2 className="text-3xl font-bold text-center bg-blue-950 bg-opacity-100 text-white py-2 rounded-lg">
+            User Login
+          </h2>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+
+            <div>
+              <label htmlFor="username" className="block mb-1 font-medium">
+                Username
+              </label>
+              <input
+                id="username"
+                type="text"
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+                placeholder="Enter your username"
+                required
+                className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block mb-1 font-medium">
+                Password
+              </label>
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                required
+                className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="role" className="block mb-1 font-medium">
+                Role
+              </label>
+              <select
+                id="role"
+                value={role}
+                onChange={e => setRole(e.target.value)}
+                className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option>Candidate</option>
+                <option>Department</option>
+                <option>Admin</option>
+              </select>
+            </div>
+
+            <div className="text-right">
+              <Link
+                to="/forgot-password"
+                className="text-blue-600 hover:underline text-sm"
+              >
+                Forgot password?
+              </Link>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-950 text-white py-2 rounded-lg transition-transform transform hover:scale-105"
+            >
+              Login
+            </button>
+          </form>
+
+          <p className="text-center text-lg">
+            New user?{' '}
+            <Link to="/register" className="text-blue-600 hover:underline">
+              Sign up
+            </Link>
+          </p>
+        </div>
+      </div>
     </div>
   )
 }

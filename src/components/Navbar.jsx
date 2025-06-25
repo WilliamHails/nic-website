@@ -18,16 +18,16 @@ export default function Navbar () {
     <nav className="bg-blue-950 text-white flex items-center px-6 h-16">
 
         {/*Logo */}
-        <Link to="/" className="font-bold text-xl mr-8">MyCompany</Link>
+        <Link to="/" className="font-bold text-4xl mr-8">NIC</Link>
 
         {/*Links*/}
-        <div classname="flex space-x-4">
+        <div classname="flex space-x-15">
             {links.map(({ to, label }) => (
                 <NavLink
                     key={to}
                     to={to}
                     className={({isActive}) =>
-                        isActive ? 'underline mx-3' : 'hover:underline mx-3'
+                        isActive ? 'underline mx-10 text-lg font-semibold border-1 border-blue-900 p-1 rounded-lg' : 'hover:underline mx-10 text-lg font-semibold border-1 border-blue-900 p-1 rounded-lg'
                     }
                 >
                     {label}
