@@ -18,7 +18,8 @@ export default function Navbar () {
     <nav className="bg-blue-950 text-white flex items-center px-6 h-16">
 
         {/*Logo */}
-        <Link to="/" className="font-bold text-4xl mr-8">NIC</Link>
+        <img src='/images/nic_logo.png' className="h-15 w-32"  />
+        
 
         {/*Links*/}
         <div classname="flex space-x-15">
@@ -37,3 +38,6 @@ export default function Navbar () {
     </nav>
   )
 }
+
+
+// line 22: <Link to="/" className="font-bold text-4xl mr-8">NIC</Link>
