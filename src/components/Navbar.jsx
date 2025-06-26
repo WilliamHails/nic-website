@@ -18,20 +18,26 @@ export default function Navbar () {
     <nav className="bg-blue-950 text-white flex items-center px-6 h-16">
 
         {/*Logo */}
-        <img src='/images/nic_logo.png' className="h-15 w-32"  />
+        <div className="">
+            <Link to="/">
+                <img src='/images/nic_logo.png' className="h-15 w-30"  />
+            </Link>
+        </div>
         
 
         {/*Links*/}
-        <div classname="flex space-x-15">
+        <div className="flex">
             {links.map(({ to, label }) => (
                 <NavLink
                     key={to}
                     to={to}
                     className={({isActive}) =>
-                        isActive ? 'underline mx-10 text-lg font-semibold border-1 border-blue-900 p-1 rounded-lg' : 'hover:underline mx-10 text-lg font-semibold border-1 border-blue-900 p-1 rounded-lg'
+                        isActive ? 'hover:underline text-lg font-semibold bg-blue-900' : 'hover:underline text-lg font-semibold'
                     }
                 >
-                    {label}
+                    <div className="border-x-1 py-4 px-13 hover:bg-blue-900 border-gray-700">
+                        {label}
+                    </div>
                 </NavLink>
             ))}
         </div>
@@ -40,4 +46,5 @@ export default function Navbar () {
 }
 
 
-// line 22: <Link to="/" className="font-bold text-4xl mr-8">NIC</Link>
+
+// border-x-1 py-4 px-2 border-gray-700

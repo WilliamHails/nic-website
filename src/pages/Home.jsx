@@ -66,11 +66,11 @@ export default function Home() {
           />
           <button
             onClick={prev}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-600 hover:bg-gray-800 ease-in-out duration-75 bg-opacity-50 text-white text-4xl px-1 pb-1 rounded-full"
           >‹</button>
           <button
             onClick={next}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-600 hover:bg-gray-800 ease-in-out duration-75 bg-opacity-50 text-white text-4xl px-1 pb-1 rounded-full"
           >›</button>
         </div>
 

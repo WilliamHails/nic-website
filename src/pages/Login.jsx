@@ -28,7 +28,18 @@ export default function Login() {
         </p>
       </div>
 
-      <div className="w-1/2 bg-white flex items-center justify-center">
+      <div className="w-1/2 bg-white flex flex-col items-center justify-center relative">
+
+        <div className="absolute top-4 left-4">
+          <Link to="/" className="flex items-center text-blue-800">
+            <div className="flex">
+              <span className="text-3xl font-bold">‹</span>
+              <span className="ml-2 mt-1 text-sm content-around pt-1 hover:underline">Go to Home page</span>
+            </div>
+          </Link>
+        </div>
+
+
         <div className="w-2/3 max-w-md space-y-6">
           <h2 className="text-3xl font-bold text-center bg-blue-950 bg-opacity-100 text-white py-2 rounded-lg">
             User Login
