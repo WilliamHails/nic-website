@@ -157,7 +157,7 @@ export default function Register() {
                 required
               />
               <div>
-                <label className="block mb-1 font-medium">
+                <label className="block mb-1 font-semibold">
                   PRTC Certificate Document *
                 </label>
                 <input
@@ -254,7 +254,7 @@ export default function Register() {
               required
             />
             <div className="flex flex-col">
-              <label className="font-medium mb-1">Password * </label>
+              <label className="font-semibold mb-1">Password * </label>
               <div className="relative">
                 <input
                   name="password"
@@ -276,7 +276,7 @@ export default function Register() {
               </div>
             </div>
             <div className="flex flex-col">
-              <label className="font-medium mb-1">Confirm Password * </label>
+              <label className="font-semibold mb-1">Confirm Password * </label>
               <div className="relative">
                 <input
                   name="confirmPassword"
@@ -333,7 +333,7 @@ export default function Register() {
       </form>
 
       {status && (
-        <p className="mt-6 text-center text-red-700 font-semibold">{status}</p>
+        <p className={`mt-6 text-center text-2xl font-semibold ${status.includes('success') ? 'text-green-700' : 'text-red-700'}`}>{status}</p>
       )}
     </div>
   )
@@ -377,7 +377,7 @@ function Input({
 function Select({ label, name, value, onChange, options, required = false }) {
   return (
     <div className="flex flex-col">
-      <label htmlFor={name} className="font-medium mb-1">
+      <label htmlFor={name} className="font-semibold mb-1">
         {label}
       </label>
       <select
